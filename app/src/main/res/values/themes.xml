@@ -39,7 +39,7 @@
 
     <style name="MyButtonStyle3" parent="Widget.MaterialComponents.Button">
 
-        <item name="android:backgroundTint">@color/white</item>
+        <item name="android:backgroundTint">@color/blue</item>
         <item name="android:textColor">@color/black</item>
     </style>
 

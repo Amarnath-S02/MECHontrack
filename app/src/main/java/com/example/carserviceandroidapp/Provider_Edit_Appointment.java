@@ -109,10 +109,10 @@ public class Provider_Edit_Appointment extends AppCompatActivity {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        String host = "smtp.mail.yahoo.com";
+                        String host = "smtp.gmail.com";
                         String port = "587";
-                        String username = "thienphuocufo@yahoo.com.vn";
-                        String password = "wnvqewwhprkhwrqd";
+                        String username = "mechontracks@gmail.com";
+                        String password = "Mechontrack123";
 
                         Properties props = new Properties();
                         props.put("mail.smtp.host", host);
@@ -131,7 +131,7 @@ public class Provider_Edit_Appointment extends AppCompatActivity {
                             message.setFrom(new InternetAddress(username));
                             message.setRecipients(Message.RecipientType.TO,
                                     InternetAddress.parse("ralphgradien01@gmail.com"));
-                            message.setSubject("Car Service Remind");
+                            message.setSubject("Vehicle Service Remind");
                             message.setText("Dear " + v_customerName + ",\n\n" +
                                     "This is a reminder email about the service you booked at our company. \n\n" +
                                     "Service booked              : " + v_selectedServices + "\n" +

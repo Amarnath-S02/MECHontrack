@@ -24,28 +24,28 @@ public class home extends AppCompatActivity {
             public void onClick(View v) {
                 if (DB.isDatabaseEmpty()) {
                     //Insert Customer Data
-                    DB.insertuserdata("John Hancock", "password1", "john123@gmail.com", "9876543210", "123 Main St");
-                    DB.insertuserdata("Alice Claire", "password2", "alice456@yahoo.com", "1234567890", "456 Oak Ave");
-                    DB.insertuserdata("Bob Walden", "password3", "bob789@hotmail.com", "5555555555", "789 Elm St");
-                    DB.insertuserdata("Emily Hirch", "password4", "emily567@outlook.com", "1112223333", "321 Maple St");
-                    DB.insertuserdata("David Pleat", "password5", "david999@aol.com", "7777777777", "654 Birch Ln");
-                    DB.insertuserdata("Oliver Pascal", "password6", "oliver246@gmail.com", "3334445555", "987 Pine Rd");
-                    DB.insertuserdata("Grace Simpson", "password7", "grace135@yahoo.com", "8888888888", "123 Cedar Ave");
-                    DB.insertuserdata("Alex Grady", "password8", "alex789@outlook.com", "9999999999", "456 Spruce St");
-                    DB.insertuserdata("Sophia Estevez", "password9", "sophia567@hotmail.com", "4445556666", "789 Sycamore Rd");
-                    DB.insertuserdata("Ethan Moriaty", "password10", "ethan123@gmail.com", "2223334444", "321 Magnolia Dr");
+                    DB.insertuserdata("Amar", "password1", "amar123@gmail.com", "9876543210", "123 peelamedu");
+                    DB.insertuserdata("karthi", "password2", "karthi123@gmail.com", "1234567890", "456 peelamedu");
+                    DB.insertuserdata("maran", "password3", "maran123@hotmail.com", "5555555555", "789 peelamedu");
+                    DB.insertuserdata("Prakash", "password4", "prakash123@gmail.com", "1112223333", "321 peelamedu");
+                    DB.insertuserdata("Edison", "password5", "edison123@gmail.com", "7777777777", "654 peelamedu");
+                    DB.insertuserdata("Vignesh", "password6", "vignesh123@gmail.com", "3334445555", "987 peelamedu");
+                    DB.insertuserdata("Rohith", "password7", "rohith123@gmail.com", "8888888888", "123 peelamedu");
+                    DB.insertuserdata("Marian", "password8", "marian123@gmail.com", "9999999999", "456 peelamedu");
+                    DB.insertuserdata("Siva Shanker", "password9", "sivashanker123@gmail.com", "4445556666", "789 peelamedu");
+                    DB.insertuserdata("Tejo", "password10", "tejo123@gmail.com", "2223334444", "321 peelamedu");
 
                     //Insert Service Provider Data
-                    DB.insertServiceProvider("password1", "Motospot Workshop", "Abbosford", "Surrey", "BC", "V43G67", "davinci8gilbert@yahoo.com", "5874235", "a");
-                    DB.insertServiceProvider("password2", "AutoPro", "Main street", "Vancouver", "BC", "V6A 1C7", "autoproservice@gmail.com", "604-555-1234", "b");
-                    DB.insertServiceProvider("password3", "Jiffy Lube", "Granville street", "Vancouver", "BC", "V6H 3K4", "jiffylube@outlook.com", "604-555-6789", "c");
-                    DB.insertServiceProvider("password4", "Speedy Auto Service", "King street", "Toronto", "ON", "M5V 1K4", "speedyservice@gmail.com", "416-555-4321", "d");
-                    DB.insertServiceProvider("password5", "Mr. Lube", "Yonge street", "Toronto", "ON", "M4N 3M7", "davinci8gilbert@yahoo.com", "416-555-9876", "e");
-                    DB.insertServiceProvider("password6", "Precision Tune Auto Care", "Portage avenue", "Winnipeg", "MB", "R3G 0W4", "precisiontunewinnipeg@yahoo.com", "204-555-3456", "f");
-                    DB.insertServiceProvider("password8", "Mister Transmission", "Regina avenue", "Saskatoon", "SK", "S7N 1B5", "mistertranssaskatoon@hotmail.com", "306-555-7890", "g");
-                    DB.insertServiceProvider("password9", "Oil Changers", "Queen street", "Toronto", "ON", "M4C 1G5", "oilchangersontario@gmail.com", "416-555-2468", "h");
-                    DB.insertServiceProvider("password10", "Great Canadian Oil Change", "Albert street", "Toronto", "ON", "S4R 2N3", "greatcanadianoilchange@yahoo.ca", "306-555-1357", "i");
-                    DB.insertServiceProvider("password11", "Meineke Car Care", "St. James street", "Surrey", "MB", "R3G 3J6", "meinekewinnipeg@outlook.com", "204-555-8642", "j");
+                    DB.insertServiceProvider("password1", "Motospot Workshop", "1st Streetd", "Peelamedu", "BC", "124367", "amar123@gmail.com", "5874235", "a");
+                    DB.insertServiceProvider("password2", "AutoPro", "1st Streetd", "Peelamedu", "BC", "641004", "amar123@gmail.com", "6045551234", "b");
+                    DB.insertServiceProvider("password3", "Jiffy Lube", "1st Streetd", "Peelamedu", "BC", "641004", "amar123@gmail.com", "6045556789", "c");
+                    DB.insertServiceProvider("password4", "Speedy Auto Service", "K1st Streetdt", "Peelamedu", "ON", "641004", "amar123@gmail.com", "4165554321", "d");
+                    DB.insertServiceProvider("password5", "Marian", "1st Streetd", "Peelamedu", "ON", "641004", "amar123@gmail.com", "4165559876", "e");
+                    DB.insertServiceProvider("password6", "Tune Auto Care", "1st Streetd", "Peelamedu", "MB", "641004", "amar123@gmail.com", "2045553456", "f");
+                    DB.insertServiceProvider("password8", "Mister Transmission", "1st Streetd", "Peelamedu", "SK", "641004", "amar123@gmail.com", "3065557890", "g");
+                    DB.insertServiceProvider("password9", "Oil Changers", "1st Streetd", "Peelamedu", "ON", "641004", "amar123@gmail.com", "4165552468", "h");
+                    DB.insertServiceProvider("password10", "Great indian Oil Change", "1st Streetd", "Peelamedu", "ON", "641004", "amar123@gmail.com", "3065551357", "i");
+                    DB.insertServiceProvider("password11", "M Car Care", "1st Streetdt", "Peelamedu", "MB", "641004", "amar123@gmail.com", "2045558642", "j");
 
                     //Insert Service Detail Data
                     DB.insertServiceDetail("Full Brake Check", "It will include flushing out the old brake fluid and replacing it with new fluid");

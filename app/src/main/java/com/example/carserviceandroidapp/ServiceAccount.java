@@ -102,7 +102,7 @@ public class ServiceAccount extends Fragment {
                     image = R.drawable.c5;
                     break;
                 case 'f':
-                    image = R.drawable.c6;
+                    image = R.drawable.c5;
                     break;
                 case 'g':
                     image = R.drawable.c7;

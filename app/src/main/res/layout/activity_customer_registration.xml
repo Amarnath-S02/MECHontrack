@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    android:background="@drawable/bg_activity"
+    android:background="@color/white"
     tools:context=".Customer_Registration">
 
     <EditText
@@ -14,8 +14,8 @@
         android:layout_height="48dp"
         android:layout_marginTop="10dp"
         android:textSize="18dp"
-        android:background="#E3BA12"
-        android:hint="@string/hint_Name"
+        android:background="@drawable/edittext"
+        android:hint="  Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewRegTitle" />
@@ -25,8 +25,8 @@
         android:layout_width="250dp"
         android:layout_height="48dp"
         android:layout_marginTop="10dp"
-        android:background="#E3BA12"
-        android:hint="@string/hint_Address"
+        android:background="@drawable/edittext"
+        android:hint=" Address"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,8 +37,8 @@
         android:layout_width="250dp"
         android:layout_height="48dp"
         android:layout_marginTop="10dp"
-        android:background="#E3BA12"
-        android:hint="@string/hint_Contact"
+        android:background="@drawable/edittext"
+        android:hint=" Contact"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,8 +49,8 @@
         android:layout_width="250dp"
         android:layout_height="48dp"
         android:layout_marginTop="10dp"
-        android:background="#E3BA12"
-        android:hint="@string/hint_Email"
+        android:background="@drawable/edittext"
+        android:hint=" Email"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,8 +76,8 @@
         android:layout_width="250dp"
         android:layout_height="48dp"
         android:layout_marginTop="10dp"
-        android:background="#E3BA12"
-        android:hint="@string/hint_password"
+        android:background="@drawable/edittext"
+        android:hint=" password"
         android:inputType="textPassword"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -90,8 +90,8 @@
         android:layout_width="250dp"
         android:layout_height="48dp"
         android:layout_marginTop="10dp"
-        android:background="#E3BA12"
-        android:hint="@string/hint_confirmPassword"
+        android:background="@drawable/edittext"
+        android:hint=" ConfirmPassword"
         android:inputType="textPassword"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -148,6 +148,6 @@
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/verticallogo" />
+        app:srcCompat="@drawable/location_icon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
