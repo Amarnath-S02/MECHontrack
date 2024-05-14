@@ -1,66 +1,50 @@
-package com.example.carserviceandroidapp;
+package com.example.carserviceandroidapp
 
-import android.content.Context;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import android.content.Context
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
+class ServiceHistoryAdapter(var context: Context?, var items: List<ServiceHistoryItems>) :
+    RecyclerView.Adapter<ServiceHistoryViewHolder>() {
+    private val selectInterface: CustomerAppointmentsViewSelectInterface? = null
 
-import java.util.List;
-
-public class ServiceHistoryAdapter extends RecyclerView.Adapter<ServiceHistoryViewHolder> {
-
-    Context context;
-
-    List<ServiceHistoryItems> items;
-    private CustomerAppointmentsViewSelectInterface selectInterface;
-
-    public ServiceHistoryAdapter(Context context, List<ServiceHistoryItems> items) {
-        this.context = context;
-        this.items = items;
+    //    public ServiceHistoryAdapter(Context applicationContext) {}
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ServiceHistoryViewHolder {
+        return ServiceHistoryViewHolder(
+            LayoutInflater.from(context).inflate(R.layout.serivce_history_view, parent, false)
+        )
     }
 
-//    public ServiceHistoryAdapter(Context applicationContext) {}
-
-    @NonNull
-    @Override
-    public ServiceHistoryViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ServiceHistoryViewHolder(LayoutInflater.from(context).inflate(R.layout.serivce_history_view,parent,false));
-    }
-
-    @Override
-    public void onBindViewHolder(@NonNull ServiceHistoryViewHolder holder, int position) {
-        ServiceHistoryItems currentItem = items.get(position);
-        holder.nameView.setText(currentItem.getCustomerName());
-        holder.numberView.setText(currentItem.getCustomerNumber());
-        holder.emailView.setText(currentItem.getCustomerEmail());
-        holder.appointmentTypeView.setText(currentItem.getServiceDetails());
-        holder.deliveryTypeView.setText(currentItem.getServiceAppointmentType());
-        holder.idNumberView.setText(currentItem.getServiceAppointmentID());
-        String appointmentStatus = currentItem.getServiceAppointmentStatus();
-        holder.appointmentStatusView.setText(appointmentStatus);
+    override fun onBindViewHolder(holder: ServiceHistoryViewHolder, position: Int) {
+        val currentItem = items[position]
+        holder.nameView.text = currentItem.customerName
+        holder.numberView.text = currentItem.customerNumber
+        holder.emailView.text = currentItem.customerEmail
+        holder.appointmentTypeView.text = currentItem.serviceDetails
+        holder.deliveryTypeView.text = currentItem.serviceAppointmentType
+        holder.idNumberView.text = currentItem.serviceAppointmentID
+        val appointmentStatus = currentItem.serviceAppointmentStatus
+        holder.appointmentStatusView.text = appointmentStatus
         //Shows all parameters when "completed"
-        if (appointmentStatus.equals("Completed")) {
-            holder.completedDateView.setText(currentItem.getServiceCompletedDate());
-            holder.pickupDateView.setText(currentItem.getServicePickupDate());
-            holder.dropOffDateView.setText(currentItem.getServiceDropOffDate());
-            holder.appointmentStatusView.setBackgroundResource(R.drawable.green_rounded_rectangle);
-        }
-        //Adjusts styling if cancelled
-        else if (appointmentStatus.equals("Cancelled")) {
-            holder.pickupDateView.setVisibility(View.GONE);
-            holder.completedDateView.setVisibility(View.GONE);
-            holder.completed.setVisibility(View.GONE);
-            holder.pickup.setVisibility(View.GONE);
-            holder.dropOffDateView.setText(currentItem.getServiceDropOffDate());
-            holder.dropOffDateView.setTextColor(context.getResources().getColor(R.color.red));
-            holder.appointmentStatusView.setBackgroundResource(R.drawable.red_rounded_rectangle);
+        if (appointmentStatus == "Completed") {
+            holder.completedDateView.text = currentItem.serviceCompletedDate
+            holder.pickupDateView.text = currentItem.servicePickupDate
+            holder.dropOffDateView.text = currentItem.serviceDropOffDate
+            holder.appointmentStatusView.setBackgroundResource(R.drawable.green_rounded_rectangle)
+        } else if (appointmentStatus == "Cancelled") {
+            holder.pickupDateView.visibility = View.GONE
+            holder.completedDateView.visibility = View.GONE
+            holder.completed.visibility = View.GONE
+            holder.pickup.visibility = View.GONE
+            holder.dropOffDateView.text = currentItem.serviceDropOffDate
+            holder.dropOffDateView.setTextColor(context!!.resources.getColor(R.color.red))
+            holder.appointmentStatusView.setBackgroundResource(R.drawable.red_rounded_rectangle)
         }
     }
-    @Override
-    public int getItemCount() {
-        return items.size();
+
+    override fun getItemCount(): Int {
+        return items.size
     }
 }

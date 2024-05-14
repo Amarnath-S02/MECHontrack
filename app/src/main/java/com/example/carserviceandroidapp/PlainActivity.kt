@@ -1,35 +1,27 @@
-package com.example.carserviceandroidapp;
+package com.example.carserviceandroidapp
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentTransaction;
+import android.content.Intent
+import android.os.Bundle
+import android.view.View
+import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-
-public class PlainActivity extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_plain);
-
-       Customer_AppointmentsView customer_appointmentsView = new Customer_AppointmentsView();
-
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.plainLayout,customer_appointmentsView);
-        transaction.commit();
-
-        Button homeButton = (Button) findViewById(R.id.buttonHomePlain);
-        homeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(PlainActivity.this,CustomerMainMenu.class));
-            }
-        });
-
+class PlainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_plain)
+        val customer_appointmentsView = CustomerAppointmentsView()
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.plainLayout, customer_appointmentsView)
+        transaction.commit()
+        val homeButton = findViewById<View>(R.id.buttonHomePlain) as Button
+        homeButton.setOnClickListener {
+            startActivity(
+                Intent(
+                    this@PlainActivity,
+                    CustomerMainMenu::class.java
+                )
+            )
+        }
     }
 }

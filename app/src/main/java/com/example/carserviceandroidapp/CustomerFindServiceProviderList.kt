@@ -1,83 +1,76 @@
-package com.example.carserviceandroidapp;
+package com.example.carserviceandroidapp
 
+import android.content.Intent
+import android.database.Cursor
+import android.os.Bundle
+import android.view.View
+import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.carserviceandroidapp.CustomAdapter.ItemClickListener
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.content.Intent;
-import android.database.Cursor;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import java.util.ArrayList;
-
-public class CustomerFindServiceProviderList extends AppCompatActivity  implements CustomAdapter.ItemClickListener{
-    DBHelper DB;
-    CustomAdapter adapter;
-    String location="";String spID, fullLoc;
+class CustomerFindServiceProviderList() : AppCompatActivity(), ItemClickListener {
+    var DB: DBHelper? = null
+    var adapter: CustomAdapter? = null
+    var location: String? = ""
+    var spID: String? = null
+    var fullLoc: String? = null
 
     //arraylist to store the image and the text for the recycle views
-    ArrayList<ImageAndText> aList = new ArrayList<>();
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_customer_find_service_provider_list);
-        DB = new DBHelper(this);
-        Intent intent = getIntent();
-        TextView txtServiceLoc = findViewById(R.id.txtServiceLocation);
-        if(intent!=null)
-        {
-            location = intent.getStringExtra("LOC");
-            txtServiceLoc.setText("Available Service Providers at \n" +location);
+    var aList: ArrayList<ImageAndText> = ArrayList()
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_customer_find_service_provider_list)
+        DB = DBHelper(this)
+        val intent: Intent? = getIntent()
+        val txtServiceLoc: TextView = findViewById(R.id.txtServiceLocation)
+        if (intent != null) {
+            location = intent.getStringExtra("LOC")
+            txtServiceLoc.setText("Available Service Providers at \n" + location)
         }
         //displaying the image and the text name and address of the service providers
-        displayData();
+        displayData()
         //showing the recycle view by 2 columns
-        RecyclerView recyclerView = findViewById(R.id.recyclerView);
-        int numOfCols = 2;
-        recyclerView.setLayoutManager(new GridLayoutManager(this,numOfCols));
-        adapter = new CustomAdapter(this,aList,this);
-        recyclerView.setAdapter(adapter);
+        val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
+        val numOfCols: Int = 2
+        recyclerView.setLayoutManager(GridLayoutManager(this, numOfCols))
+        adapter = CustomAdapter(this, aList, this)
+        recyclerView.setAdapter(adapter)
     }
 
-    @Override
-    public void onItemClick(View view, int position) {
-        spID = aList.get(position).getServiceProviderID();
-        Intent intent = new Intent(CustomerFindServiceProviderList.this,CustomerScheduleDropOff.class);
-        intent.putExtra("SPID",spID);
-        startActivity(intent);
+    public override fun onItemClick(view: View?, position: Int) {
+        spID = aList.get(position).serviceProviderID
+        val intent: Intent =
+            Intent(this@CustomerFindServiceProviderList, CustomerScheduleDropOff::class.java)
+        intent.putExtra("SPID", spID)
+        startActivity(intent)
     }
 
     //displaying the image and the text name and address of the service providers
-    private void displayData()
-    {
-        Cursor cursor = DB.getServiceProviderList();
-
-        if(cursor.getCount()==0)
-        {
-            Toast.makeText(CustomerFindServiceProviderList.this,"No Entry Exists",Toast.LENGTH_SHORT).show();
-            return;
-        }
-        else
-        {
-            while(cursor.moveToNext())
-            {
-                if(cursor.getString(4).equals(location))
-                {
-                    String imageName = cursor.getString(9); // replace with the name of the desired image
-                    int imageResourceId = getResources().getIdentifier(imageName, "drawable", getPackageName());
-                    fullLoc = cursor.getString(2) + "\n" + cursor.getString(3) + "," +
-                            cursor.getString(4) + ", " + cursor.getString(5) +", "
-                            +  cursor.getString(6);
-                    aList.add(new ImageAndText(fullLoc, imageResourceId,cursor.getString(0)));
-
+    private fun displayData() {
+        val cursor: Cursor? = DB?.serviceProviderList
+        if (cursor!!.getCount() == 0) {
+            Toast.makeText(
+                this@CustomerFindServiceProviderList,
+                "No Entry Exists",
+                Toast.LENGTH_SHORT
+            ).show()
+            return
+        } else {
+            while (cursor.moveToNext()) {
+                if ((cursor.getString(4) == location)) {
+                    val imageName: String =
+                        cursor.getString(9) // replace with the name of the desired image
+                    val imageResourceId: Int =
+                        getResources().getIdentifier(imageName, "drawable", getPackageName())
+                    fullLoc = (cursor.getString(2) + "\n" + cursor.getString(3) + "," +
+                        cursor.getString(4) + ", " + cursor.getString(5) + ", "
+                        + cursor.getString(6))
+                    aList.add(ImageAndText(fullLoc!!, imageResourceId, cursor.getString(0)))
                 }
             }
         }
-
     }
 }

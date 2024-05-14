@@ -1,5 +1,5 @@
-package com.example.carserviceandroidapp;
+package com.example.carserviceandroidapp
 
-public interface CustomerAppointmentsViewSelectInterface {
-    void onItemClick(CustomerApointmentItems customerApointmentItems);
+open interface CustomerAppointmentsViewSelectInterface {
+    fun onItemClick(customerApointmentItems: CustomerApointmentItems)
 }

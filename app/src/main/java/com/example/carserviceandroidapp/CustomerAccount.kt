@@ -1,61 +1,64 @@
-package com.example.carserviceandroidapp;
+package com.example.carserviceandroidapp
 
-public class Customer_Account {
-    String cName;
-    String cPassword;
-    String cEmail;
-    String cMobile;
-    String cAddress;
+class CustomerAccount {
+    var cName: String? = null
+    var cPassword: String? = null
+    var cEmail: String? = null
+    var cMobile: String? = null
+    var cAddress: String? = null
 
-    public Customer_Account(){
-
+    constructor()
+    constructor(
+        cName: String?,
+        cPassword: String?,
+        cEmail: String?,
+        cMobile: String?,
+        cAddress: String?
+    ) {
+        this.cName = cName
+        this.cPassword = cPassword
+        this.cEmail = cEmail
+        this.cMobile = cMobile
+        this.cAddress = cAddress
     }
 
-    public Customer_Account(String cName, String cPassword, String cEmail, String cMobile, String cAddress) {
-        this.cName = cName;
-        this.cPassword = cPassword;
-        this.cEmail = cEmail;
-        this.cMobile = cMobile;
-        this.cAddress = cAddress;
+    fun getcName(): String? {
+        return cName
     }
 
-    public String getcName() {
-        return cName;
+    fun setcName(cName: String?) {
+        this.cName = cName
     }
 
-    public void setcName(String cName) {
-        this.cName = cName;
+    fun getcPassword(): String? {
+        return cPassword
     }
 
-    public String getcPassword() {
-        return cPassword;
+    fun setcPassword(cPassword: String?) {
+        this.cPassword = cPassword
     }
 
-    public void setcPassword(String cPassword) {
-        this.cPassword = cPassword;
+    fun getcEmail(): String? {
+        return cEmail
     }
 
-    public String getcEmail() {
-        return cEmail;
+    fun setcEmail(cEmail: String?) {
+        this.cEmail = cEmail
     }
 
-    public void setcEmail(String cEmail) {
-        this.cEmail = cEmail;
+    fun getcMobile(): String? {
+        return cMobile
     }
 
-    public String getcMobile() {
-        return cMobile;
+    fun setcMobile(cMobile: String?) {
+        this.cMobile = cMobile
     }
 
-    public void setcMobile(String cMobile) {
-        this.cMobile = cMobile;
+    fun getcAddress(): String? {
+        return cAddress
     }
 
-    public String getcAddress() {
-        return cAddress;
-    }
-
-    public void setcAddress(String cAddress) {
-        this.cAddress = cAddress;
+    fun setcAddress(cAddress: String?) {
+        this.cAddress = cAddress
     }
 }
