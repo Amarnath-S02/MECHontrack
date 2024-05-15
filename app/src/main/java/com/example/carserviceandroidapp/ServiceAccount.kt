@@ -69,8 +69,6 @@ class ServiceAccount : Fragment() {
             imageProfile.setImageResource(image)
         }
         val logOut = rootView.findViewById<Button>(R.id.logOut)
-
-
         //Logs out user, clearing global ID variables.
         logOut.setOnClickListener {
             Customer.CustomerID = 0
