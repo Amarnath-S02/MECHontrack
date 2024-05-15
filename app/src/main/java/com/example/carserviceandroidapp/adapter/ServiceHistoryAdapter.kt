@@ -1,10 +1,14 @@
-package com.example.carserviceandroidapp
+package com.example.carserviceandroidapp.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.carserviceandroidapp.CustomerAppointmentsViewSelectInterface
+import com.example.carserviceandroidapp.R
+import com.example.carserviceandroidapp.ServiceHistoryItems
+import com.example.carserviceandroidapp.ServiceHistoryViewHolder
 
 class ServiceHistoryAdapter(var context: Context?, var items: List<ServiceHistoryItems>) :
     RecyclerView.Adapter<ServiceHistoryViewHolder>() {

@@ -24,6 +24,7 @@ import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.carserviceandroidapp.adapter.ServiceHistoryAdapter
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException

@@ -1,4 +1,4 @@
-package com.example.carserviceandroidapp
+package com.example.carserviceandroidapp.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,6 +7,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.carserviceandroidapp.ImageAndText
+import com.example.carserviceandroidapp.R
+import com.example.carserviceandroidapp.ServiceHistoryViewHolder
 
 class CustomAdapter(
     context: Context?, var aList: ArrayList<ImageAndText>,

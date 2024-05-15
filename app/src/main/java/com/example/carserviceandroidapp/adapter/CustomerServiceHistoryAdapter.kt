@@ -1,4 +1,4 @@
-package com.example.carserviceandroidapp
+package com.example.carserviceandroidapp.adapter
 
 import android.content.Context
 import android.graphics.Color
@@ -6,6 +6,9 @@ import android.graphics.drawable.GradientDrawable
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.carserviceandroidapp.CustomerServiceHistoryItems
+import com.example.carserviceandroidapp.CustomerServiceHistoryViewHolder
+import com.example.carserviceandroidapp.R
 
 class CustomerServiceHistoryAdapter(
     var context: Context?,

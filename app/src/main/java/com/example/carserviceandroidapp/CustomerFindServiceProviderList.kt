@@ -9,7 +9,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.carserviceandroidapp.CustomAdapter.ItemClickListener
+import com.example.carserviceandroidapp.adapter.CustomAdapter
+import com.example.carserviceandroidapp.adapter.CustomAdapter.ItemClickListener
 
 class CustomerFindServiceProviderList() : AppCompatActivity(), ItemClickListener {
     var DB: DBHelper? = null

@@ -1,12 +1,15 @@
-package com.example.carserviceandroidapp
+package com.example.carserviceandroidapp.adapter
 
 import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.carserviceandroidapp.CustomerApointmentItems
+import com.example.carserviceandroidapp.CustomerAppointmentViewHolder
+import com.example.carserviceandroidapp.CustomerAppointmentsViewSelectInterface
+import com.example.carserviceandroidapp.R
 
 class CustomerAppointmentAdapter(
     var context: Context?,
